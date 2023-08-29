@@ -7,4 +7,4 @@ To run app,
 ```sh
 docker compose up --build
 ```
-4. Access the app with http://localhost:8050
+4. Access the app with http://localhost:9001
