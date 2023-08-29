@@ -1,13 +1,18 @@
 version: '3'
-
 services:
   dev:
-    command: python /root/app/app.py 
-    image: a1st124481:lastest
+    command: python3 /root/app/app.py   
+    image: a1st124481:latest
+    platform: linux/x86_64
     build: 
       context: .
       dockerfile: .Dockerfile
+    ports:
+      - 9001:80
     volumes:
-      - ./code:/root/code
+      - ./app:/root/app 
+      - ./code:/root/code 
       - ./.vscode-server:/root/.vscode-server
-      - ./app:/root/app
+    environment:
+      - HOST=0.0.0.0
+      - PORT=80
