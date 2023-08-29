@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  dev:
+    command: python /root/app/app.py 
+    image: a1st124481:lastest
+    build: 
+      context: .
+      dockerfile: .Dockerfile
+    volumes:
+      - ./code:/root/code
+      - ./.vscode-server:/root/.vscode-server
+      - ./app:/root/app
